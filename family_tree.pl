@@ -56,7 +56,7 @@ parent(annete, muthungu).
 parent(muthungu, edick).
 parent(vivian, edick).
 
-parent(volak, joan).
+parent(volka, joan).
 
 brother(X,Y):-
   male(X),
@@ -124,6 +124,19 @@ uncle(X, Y):-
   parent(W, Y),
   X \= Y, X \= W, Y \= W. # Ensure all variables are distinct
 
+
+# % Define sibling predicate
+# sibling(X, Y) :-
+#     parent(Z, X),
+#     parent(Z, Y),
+#     X \= Y.
+
+# % Define cousin predicate
+# cousin(X, Y) :-
+#     parent(A, X),
+#     parent(B, Y),
+#     sibling(A, B),
+#     X \= Y.
 
 cousin(X, Y):-
   (auntie(W, Y),
